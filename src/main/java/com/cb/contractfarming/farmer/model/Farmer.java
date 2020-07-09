@@ -1,6 +1,7 @@
 package com.cb.contractfarming.farmer.model;
 
 import com.cb.contractfarming.common.BaseEntity;
+import com.cb.contractfarming.district.District;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
@@ -36,10 +37,10 @@ public class Farmer extends BaseEntity {
   @Column(name="longitude", length = 45)
   private String longitude;
 
-//  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//  @JoinColumn(name = "district_id", nullable = false)
-//  @JsonIgnore
-//  private District district;
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "district_id", nullable = false)
+  @JsonIgnore
+  private District district;
 
   @Column(name="village", length = 45)
   private String village;
