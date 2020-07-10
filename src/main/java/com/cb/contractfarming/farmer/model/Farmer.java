@@ -1,5 +1,6 @@
 package com.cb.contractfarming.farmer.model;
 
+import com.cb.contractfarming.agromerchants.Merchant;
 import com.cb.contractfarming.common.BaseEntity;
 import com.cb.contractfarming.district.District;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -44,5 +45,7 @@ public class Farmer extends BaseEntity {
 
   @Column(name="village", length = 45)
   private String village;
+
+
 
 }
