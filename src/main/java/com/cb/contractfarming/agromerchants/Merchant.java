@@ -13,13 +13,13 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Merchant extends BaseEntity {
-    @Column(name="name", nullable = false, length = 45)
+    @Column(name="merchant_name", nullable = false, length = 45)
     private String name;
     @Column(name ="merchant_desription", nullable =false, length =100)
     private String description;
     @Column(name ="location", nullable = false, length = 50)
     private String location;
-    @Column(name = "type", nullable = false, length = 45)
+    @Column(name = "merchant_type", nullable = false, length = 45)
     private String type;
 
 }
