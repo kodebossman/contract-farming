@@ -1,5 +1,6 @@
-package contractor;
+package com.cb.contractfarming.contractor;
 import com.cb.contractfarming.common.BaseEntity;
+import com.cb.contractfarming.contract.Contract;
 import com.cb.contractfarming.farmer.model.Farmer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -9,7 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contractor", indexes = {@Index(name = "id", columnList = "id", unique = true)})
+@Table(name = "contractor", indexes = {@Index(name = "index_id", columnList = "id", unique = true)})
 @Getter
 @Setter
 @ToString
@@ -44,8 +45,9 @@ public class Contractor extends BaseEntity {
     @Column(name = "contractorBankAccount", nullable = false, length = 15)
     private String bankAccountNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "farmer_id", nullable = false)
-    @JsonIgnore
-    private Farmer farmer;
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "farmer_id", nullable = false)
+  @JsonIgnore
+  private Contract contract;
+
 }
