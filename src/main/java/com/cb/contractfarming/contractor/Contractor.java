@@ -30,8 +30,6 @@ public class Contractor extends BaseEntity {
     @Column(name = "contractorPhysicalAddress", nullable = false, length = 150)
     private String physicalAddress;
 
-    @Column(name = "contractorWebsiteUrl", length = 100)
-    private String websiteUrl;
 
     @Column(name = "contractorEmail", nullable = false, length = 45)
     private String email;
@@ -45,9 +43,5 @@ public class Contractor extends BaseEntity {
     @Column(name = "contractorBankAccount", nullable = false, length = 15)
     private String bankAccountNumber;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "farmer_id", nullable = false)
-  @JsonIgnore
-  private Contract contract;
 
 }
