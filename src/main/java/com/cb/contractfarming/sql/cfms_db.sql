@@ -1,4 +1,4 @@
-use cfms_db;
+use contract_farm_db;
 
 /*provinces*/
 INSERT INTO `cfms_db`.`province` (`name`) VALUES ('Mash East');
