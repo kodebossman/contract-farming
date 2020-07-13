@@ -19,7 +19,7 @@ import javax.persistence.*;
 public class Product extends BaseEntity {
 
     @Column(name = "product_name", length= 50, nullable = false)
-    private String productNname;
+    private String productName;
     @Column(name = "product_desc", length= 50, unique= true, nullable = false)
     private  String productDesc;
     @Column(name = "product_type", length= 50, unique= true, nullable = false)

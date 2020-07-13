@@ -9,18 +9,18 @@ import java.util.Optional;
 
 public interface ProductService {
     Product register(Product product);
-    Optional<Product> findByProductNname(String ProductNname);
+    Optional<Product> findByProductName(String ProductNname);
 
     List<Product> findByProductDesc(String ProductDesc);
 
     List<Product> findByProductPrice(Double ProductPrice);
 
     List<Product> findByProductType(String ProductType);
-    List<Product> findByProductNnameAndProductType(String ProductNname ,String ProductType);
+    List<Product> findByProductNameAndProductType(String ProductNname ,String ProductType);
 
-    List<Product> findByProductNnameAndAndProductDesc(String ProductNname, String ProductDesc);
+    List<Product> findByProductNameAndAndProductDesc(String ProductNname, String ProductDesc);
     Long total();
-    Product update(Farmer farmer);
+    Product update(Product product);
     List<Product> findAll(Pageable pageable);
 
 
