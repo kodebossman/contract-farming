@@ -15,6 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Slf4j
 @Transactional(propagation = Propagation.REQUIRED)
+
 public class ContractualCostServiceImp implements ContractCostService {
 
   private ContractualCostRepository contractualCostRepository;

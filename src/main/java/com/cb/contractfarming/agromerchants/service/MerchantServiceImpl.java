@@ -17,7 +17,8 @@ import java.util.Optional;
 @Transactional(propagation = Propagation.REQUIRED)
 
 public class MerchantServiceImpl implements MerchantService {
-    public MerchantRepository merchantRepository;
+
+    private MerchantRepository merchantRepository;
     @Override
     public Merchant register(Merchant merchant) {
         log.info("Registering new merchant"+ merchant);

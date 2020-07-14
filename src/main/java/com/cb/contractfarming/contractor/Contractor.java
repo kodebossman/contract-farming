@@ -30,7 +30,6 @@ public class Contractor extends BaseEntity {
     @Column(name = "contractorPhysicalAddress", nullable = false, length = 150)
     private String physicalAddress;
 
-
     @Column(name = "contractorEmail", nullable = false, length = 45)
     private String email;
 
