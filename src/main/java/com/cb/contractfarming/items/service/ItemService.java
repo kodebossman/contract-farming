@@ -20,6 +20,8 @@ public interface ItemService {
 
     List<Item> findByPriceAndQuantity(Double price, Integer quantity);
 
+    List<Item> findByNameAndPrice(String name, Double price);
+
     Long total();
 
     Item update(Item item);

@@ -8,14 +8,17 @@ import java.util.Optional;
 
 public interface ItemRepository extends JpaRepository<Item,Long> {
 
-    Optional<Item> findByName(String name);
+    Optional<Item> findById(String id);
 
-    List<Item> findBySerialNo(String serialNo);
+
+    List<Item> findByName(String name);
 
     List<Item> findByPrice(Double price);
 
-    List<Item>findByQuantity(Integer quality);
+    List<Item> findByPriceAndQuantity(Double price, Integer quantity);
 
-    List<Item> findByNameAndqAndQuantity(String name, Integer quality);
+    List<Item> findByNameAndPrice(String name, Double price);
+
+    Optional<Item> findByserialNo(String serialNo);
 }
 
