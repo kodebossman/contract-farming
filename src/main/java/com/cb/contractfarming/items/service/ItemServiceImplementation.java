@@ -31,7 +31,7 @@ public class ItemServiceImplementation implements ItemService{
     public Optional<Item> findBySerialNo(String serialNo) {
 
         log.info("Searching items of serialNo "+ serialNo);
-        return itemRepository.findByserialNo(serialNo);
+        return itemRepository.findBySerialNo(serialNo);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class ItemServiceImplementation implements ItemService{
     }
 
     @Override
-    public List<Item> findByName(String name) {
+    public Optional<Item> findByName(String name) {
         return itemRepository.findByName(name);
     }
 
