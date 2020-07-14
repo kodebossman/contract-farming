@@ -14,11 +14,13 @@ public interface ItemService {
 
     Optional<Item> findById(Long id);
 
-    List<Item> findByName(String name);
+    Optional<Item> findByName(String name);
 
     List<Item> findByPrice(Double price);
 
     List<Item> findByPriceAndQuantity(Double price, Integer quantity);
+
+    List<Item> findByNameAndPrice(String name, Double price);
 
     Long total();
 
