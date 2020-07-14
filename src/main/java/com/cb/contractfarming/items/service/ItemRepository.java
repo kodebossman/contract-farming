@@ -20,5 +20,14 @@ public interface ItemRepository extends JpaRepository<Item,Long> {
     List<Item> findByNameAndPrice(String name, Double price);
 
     Optional<Item> findByserialNo(String serialNo);
+    Optional<Item> findByName(String name);
+
+    List<Item> findBySerialNo(String serialNo);
+
+    List<Item> findByPrice(Double price);
+
+    List<Item>findByQuantity(Integer quality);
+
+    List<Item> findByNameAndqAndQuantity(String name, Integer quality);
 }
 
