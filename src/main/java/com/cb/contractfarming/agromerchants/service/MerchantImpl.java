@@ -13,44 +13,46 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j//Logging
 @Transactional(propagation = Propagation.REQUIRED)
 
 public class MerchantImpl implements MerchantService {
+    private MerchantRepository merchantRepository;
+
     @Override
     public Merchant register(Merchant merchant) {
         log.info("Registering new merchant"+ merchant);
-        return MerchantRepository.save(merchant);
+        return merchantRepository.save(merchant);
     }
 
     @Override
     public Optional<Merchant> findById(Long id) {
         log.info("Searching merchant by id"+ id);
-        return MerchantRepository.findById(id);
+        return merchantRepository.findById(id);
     }
 
     @Override
     public List<Merchant> findByName(String name) {
         log.info("Searching merchant by name"+ name);
-        return MerchantRepository.findByName(name);
+        return merchantRepository.findByName(name);
     }
 
     @Override
     public List<Merchant> findByMsisdn(String msisdn) {
         log.info("Searching merchant by msisdn"+ msisdn);
-        return MerchantRepository.findByMsisdn(msisdn);
+        return merchantRepository.findByMsisdn(msisdn);
     }
 
     @Override
     public List<Merchant> findByLocation(String location) {
         log.info("Searching merchant by location"+ location);
-        return MerchantRepository.findByLocation(location);
+        return merchantRepository.findByLocation(location);
     }
 
     @Override
     public List<Merchant> findByType(String type) {
         log.info("Searching merchant by Type"+ type);
-        return MerchantRepository.findById(type);
+        return merchantRepository.findByType(type);
     }
 
     @Override
@@ -59,7 +61,7 @@ public class MerchantImpl implements MerchantService {
     @Override
     public Merchant update(Merchant merchant) {
         log.info("Updating this Merchant"+merchant);
-        return  MerchantRepository.save(merchant);
+        return  merchantRepository.save(merchant);
     }
 
     @Override
