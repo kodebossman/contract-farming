@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface ContractorReposiroty extends JpaRepository<Contractor,Long> {
 
-    List<Contractor> findByContractorName(String name);
+    List<Contractor> findBycontractorName(String name);
 
-    Optional<Contractor> findById(Long id);
+    List<Contractor> findById(int id);
 
     List<Contractor> findByEmail(String email);
 
