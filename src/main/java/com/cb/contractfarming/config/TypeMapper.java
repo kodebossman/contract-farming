@@ -9,14 +9,16 @@ import org.mapstruct.Mapper;
 
 
 @Mapper(componentModel = "spring")
-public interface  TypeMapper {
+public interface TypeMapper {
 
   Farmer map(FarmerDto farmerDto);
 
   FarmerDto map(Farmer farmer);
 
 
-  Item map(ItemsDTO itemsDTO);
+    Item map(ItemsDTO itemsDTO);
+
   ItemsDTO map(Item item);
+
 }
 
