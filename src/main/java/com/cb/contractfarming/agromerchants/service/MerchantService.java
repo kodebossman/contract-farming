@@ -10,7 +10,7 @@ import java.util.Optional;
 public interface MerchantService {
     Merchant register(Merchant merchant);
 
-    Optional<Merchant> findById(int id);
+    Optional<Merchant> findById(Long id);
 
     List<Merchant> findByName(String name);
 
