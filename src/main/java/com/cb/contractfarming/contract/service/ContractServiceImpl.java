@@ -3,18 +3,28 @@ package com.cb.contractfarming.contract.service;
 import com.cb.contractfarming.contract.Contract;
 import com.cb.contractfarming.contractor.Contractor;
 import com.cb.contractfarming.farmer.model.Farmer;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
+@Slf4j
+@Transactional(propagation = Propagation.REQUIRED)
 public class ContractServiceImpl implements ContractService {
 
-    private ContractRepository contractRepository;
+    private final ContractRepository contractRepository;
 
     @Override
     public Contract register(Contract contract) {
+        log.info("Registering a new contract: {}" + contract);
         return contractRepository.save(contract);
     }
 
@@ -29,7 +39,7 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public List<Contract> findByDateSigned(LocalDateTime dateSigned) {
+    public List<Contract> findByDateSigned(LocalDate dateSigned) {
         return contractRepository.findByDateSigned(dateSigned);
     }
 

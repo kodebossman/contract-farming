@@ -10,6 +10,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,14 +28,17 @@ public class Contract extends BaseEntity {
   @Column(name = "contract_type", nullable = false, length = 45)
   private ContractType contractType;
 
-  @Column(name = "description", nullable = false, length = 45)
+  @Column(name = "description", nullable = false, length = 255)
   private String description;
 
   @Column(name = "date_signed", nullable = false)
-  private LocalDateTime dateSigned;
+  private LocalDate dateSigned;
+
+  @Column(name = "contract_start_date", nullable = false)
+  private LocalDate startDate;
 
   @Column(name = "contract_end_date", nullable = false)
-  private LocalDateTime endDate;
+  private LocalDate endDate;
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "farmer_id", nullable = false)
@@ -45,4 +49,5 @@ public class Contract extends BaseEntity {
   @JoinColumn(name = "contractor_id", nullable = false)
   @JsonIgnore
   private Contractor contractor;
+
 }
