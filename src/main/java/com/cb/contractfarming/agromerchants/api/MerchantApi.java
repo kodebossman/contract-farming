@@ -9,10 +9,7 @@ import com.cb.contractfarming.config.TypeMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -26,15 +23,12 @@ public class MerchantApi implements CrudApi<MerchantDto> {
     private final TypeMapper typeMapper;
 
     //Register A New Merchant
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @PostMapping(value = "/register")
     public ApiResponse<MerchantDto> register( @Valid @RequestBody MerchantDto merchantDto){
-        log.info("New Merchant "+merchantDto);
+        log.info("New Merchant "+ merchantDto);
         final Merchant merchant = merchantService.register(typeMapper.map(merchantDto));
         return new ApiResponse<>(HttpStatus.OK.value(), typeMapper.map(merchant));
     }
-
-
-
 
     @Override
     public ApiResponse<MerchantDto> create(MerchantDto merchantDto) {
