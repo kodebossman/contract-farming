@@ -5,7 +5,7 @@ import com.cb.contractfarming.contractor.Contractor;
 import com.cb.contractfarming.farmer.model.Farmer;
 import org.springframework.data.domain.Pageable;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +17,7 @@ public interface ContractService {
 
     Optional<Contract> findByContractName(String contractName);
 
-    List<Contract> findByDateSigned(LocalDateTime dateSigned);
+    List<Contract> findByDateSigned(LocalDate dateSigned);
 
     List<Contract> findAll(Pageable pageable);
 

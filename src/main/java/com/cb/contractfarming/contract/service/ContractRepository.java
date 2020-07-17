@@ -5,7 +5,7 @@ import com.cb.contractfarming.contractor.Contractor;
 import com.cb.contractfarming.farmer.model.Farmer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +15,7 @@ public interface ContractRepository extends JpaRepository<Contract, Long> {
 
     Optional<Contract> findByContractName(String contractName);
 
-    List<Contract> findByDateSigned(LocalDateTime dateSigned);
+    List<Contract> findByDateSigned(LocalDate dateSigned);
 
     List<Contract> findByContractor(Contractor contractor);
 
