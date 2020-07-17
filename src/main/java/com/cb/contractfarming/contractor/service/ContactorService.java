@@ -5,13 +5,16 @@ import com.cb.contractfarming.contractor.Contractor;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ContactorService {
 
 
-    List<Contractor> findBycontractorName(String name);
+    Contractor register(Contractor contractor);
 
-    List<Contractor> findById(int id);
+    List<Contractor> findByContractorName(String name);
+
+    Optional<Contractor> findById(Long id);
 
     List<Contractor> findByEmail(String email);
 
