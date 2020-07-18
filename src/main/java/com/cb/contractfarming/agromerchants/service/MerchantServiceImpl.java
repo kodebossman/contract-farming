@@ -16,7 +16,7 @@ import java.util.Optional;
 @Slf4j//Logging
 @Transactional(propagation = Propagation.REQUIRED)
 
-public class MerchantImpl implements MerchantService {
+public class MerchantServiceImpl implements MerchantService {
     private MerchantRepository merchantRepository;
 
     @Override

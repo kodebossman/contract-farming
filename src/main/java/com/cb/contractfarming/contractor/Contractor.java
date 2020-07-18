@@ -19,28 +19,28 @@ import javax.persistence.*;
 public class Contractor extends BaseEntity {
 
     @Column(name = "contractorName", nullable = false, length = 100)
-    private String name;
+    private String contractorName;
 
     @Column(name = "contractorType", nullable = false, length = 20)
-    private ContractorType type;
+    private ContractorType contractorType;
 
     @Column(name = "contractorPhoneNumber", nullable = false, length = 15, unique = true)
-    private String phoneNumber;
+    private String contractorPhoneNumber;
 
     @Column(name = "contractorPhysicalAddress", nullable = false, length = 150)
-    private String physicalAddress;
+    private String contractorPhysicalAddress;
 
     @Column(name = "contractorEmail", nullable = false, length = 45)
-    private String email;
+    private String contractorEmail;
 
     @Column(name = "contractorBankName", nullable = false, length = 50)
-    private String bankName;
+    private String contractorBankName;
 
     @Column(name = "contractBankBranch", nullable = false, length = 50)
-    private String bankBranch;
+    private String contractorBankBranch;
 
     @Column(name = "contractorBankAccount", nullable = false, length = 15)
-    private String bankAccountNumber;
+    private String contractorBankAccountNumber;
 
 
 }

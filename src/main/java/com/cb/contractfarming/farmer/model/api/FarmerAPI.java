@@ -21,8 +21,11 @@ import javax.validation.Valid;
 
 public class FarmerAPI implements CrudApi<FarmerDto> {
 
-  private final FarmerService farmerService;
- private  final TypeMapper typeMapper;
+
+
+
+    private final FarmerService farmerService;
+    private  final TypeMapper typeMapper;
 
   @RequestMapping(value = "/register", method = RequestMethod.POST)
  public ApiResponse<FarmerDto> register( @Valid @RequestBody FarmerDto farmerDto){

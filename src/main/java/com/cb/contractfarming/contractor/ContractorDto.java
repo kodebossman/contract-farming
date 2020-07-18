@@ -7,8 +7,7 @@ import java.io.Serializable;
 
 @Data
 public class ContractorDto extends BaseDto implements Serializable {
-    private String name;
-
+    private String contractorName;
     private ContractorType type;
     private String phoneNumber;
     private String physicalAddress;
