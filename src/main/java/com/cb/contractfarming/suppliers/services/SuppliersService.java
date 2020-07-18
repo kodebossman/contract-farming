@@ -1,6 +1,7 @@
 package com.cb.contractfarming.suppliers.services;
 
 import com.cb.contractfarming.farmer.model.Farmer;
+import com.cb.contractfarming.suppliers.SupplierType;
 import com.cb.contractfarming.suppliers.Suppliers;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Optional;
 public interface SuppliersService {
 
     Optional<Suppliers> findById(Long Id);
-
+    List<Suppliers> findBySuppliertype(SupplierType supplierType);
     List<Suppliers> findBySuppliername(String supplierName);
     List<Suppliers> findBySupplieraddress(String supplierAddress);
     List<Suppliers> findBySupplieremail(String supplierEmail);

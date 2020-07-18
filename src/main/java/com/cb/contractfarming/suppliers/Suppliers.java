@@ -12,13 +12,15 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@JsonIgnoreProperties
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Access(AccessType.FIELD)
 @Table(name = "suppliers", indexes = {@Index(name = "indx_suppliers",columnList ="id", unique = true)})
 public class Suppliers extends BaseEntity {
 
     @Column(name="supplier_name", nullable = false, length = 45)
     private String supplierName;
+    @Column(name="supplier_type",nullable= false,length= 12)
+    private SupplierType supplierType;
     @Column(name="supplier_address", nullable = false, length = 70)
     private String supplierAddress;
     @Column(name="supplier_phone", nullable = false, length = 45)

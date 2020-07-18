@@ -1,6 +1,7 @@
 package com.cb.contractfarming.suppliers.services;
 
 import com.cb.contractfarming.farmer.model.Farmer;
+import com.cb.contractfarming.suppliers.SupplierType;
 import com.cb.contractfarming.suppliers.Suppliers;
 
 import java.util.List;
@@ -18,44 +19,51 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(propagation = Propagation.REQUIRED)
 public class SuppliersImpl implements SuppliersService{
 
+    private SuppliersRepository suppliersRepository;
 
     @Override
     public Optional<Suppliers> findById(Long Id) {
-        return Optional.empty();
+        return suppliersRepository.findById(Id);
+
+    }
+
+    @Override
+    public List<Suppliers> findBySuppliertype(SupplierType supplierType) {
+        return suppliersRepository.findBySuppliertype(supplierType);
     }
 
     @Override
     public List<Suppliers> findBySuppliername(String supplierName) {
-        return null;
+        return suppliersRepository.findBySuppliername(supplierName);
     }
 
     @Override
     public List<Suppliers> findBySupplieraddress(String supplierAddress) {
-        return null;
+        return suppliersRepository.findBySupplieraddress(supplierAddress);
     }
 
     @Override
     public List<Suppliers> findBySupplieremail(String supplierEmail) {
-        return null;
+        return suppliersRepository.findBySupplieremail(supplierEmail);
     }
 
     @Override
     public List<Suppliers> findBySupplierphone(int supplierPhone) {
-        return null;
+        return suppliersRepository.findBySupplierphone(supplierPhone);
     }
 
     @Override
     public List<Suppliers> findBySuppliercity(String supplierCity) {
-        return null;
+        return suppliersRepository.findBySuppliercity(supplierCity);
     }
 
     @Override
     public List<Suppliers> findByFarmer(Farmer farmer) {
-        return null;
+        return suppliersRepository.findByFarmer(farmer);
     }
 
     @Override
     public List<Suppliers> findByFarmerAndCity(Farmer farmer, String supplierCity) {
-        return null;
+        return suppliersRepository.findByFarmerAndCity(farmer,supplierCity);
     }
 }

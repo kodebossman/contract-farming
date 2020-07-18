@@ -11,5 +11,6 @@ public class SuppliersDto extends BaseDto implements Serializable {
     private int supplierPhone;
     private String supplierEmail;
     private String supplierCity;
+    private SupplierType supplierType;
 
 }
