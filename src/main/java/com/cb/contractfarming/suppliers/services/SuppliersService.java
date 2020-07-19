@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SuppliersService {
-
+    Suppliers register(Suppliers suppliers);
     Optional<Suppliers> findById(Long Id);
     List<Suppliers> findBySuppliertype(SupplierType supplierType);
     List<Suppliers> findBySuppliername(String supplierName);

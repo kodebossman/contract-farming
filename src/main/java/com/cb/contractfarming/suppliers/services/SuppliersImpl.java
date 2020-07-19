@@ -1,6 +1,7 @@
 package com.cb.contractfarming.suppliers.services;
 
 import com.cb.contractfarming.farmer.model.Farmer;
+import com.cb.contractfarming.products.Product;
 import com.cb.contractfarming.suppliers.SupplierType;
 import com.cb.contractfarming.suppliers.Suppliers;
 
@@ -20,6 +21,11 @@ import org.springframework.transaction.annotation.Transactional;
 public class SuppliersImpl implements SuppliersService{
 
     private SuppliersRepository suppliersRepository;
+    @Override
+    public Suppliers register(Suppliers suppliers) {
+        log.info("Registering the Supplier "+ suppliers);
+        return suppliersRepository.save(suppliers);
+    }
 
     @Override
     public Optional<Suppliers> findById(Long Id) {
