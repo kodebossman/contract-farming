@@ -38,6 +38,12 @@ public class FarmerAPI implements CrudApi<FarmerDto> {
  }
 
 
+  @GetMapping(value = "/find/{msisdn}")
+  public ApiResponse<FarmerDto> findFarmer(@PathVariable(name = "msisdn") final String msisdn) {
+    final Optional<Farmer> farmer = farmerService.findByMsisdn(msisdn);
+    return farmer.map(farmer1 -> new ApiResponse<>(HttpStatus.OK.value(), typeMapper.map(farmer1)))
+      .orElseThrow(() -> new BusinessException("Farmer with msisdn " + msisdn + "not found"));
+  }
 
   @Override
   public ApiResponse<FarmerDto> create(FarmerDto farmerDto) {
