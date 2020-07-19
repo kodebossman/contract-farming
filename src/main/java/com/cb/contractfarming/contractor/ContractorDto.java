@@ -7,16 +7,14 @@ import java.io.Serializable;
 
 @Data
 public class ContractorDto extends BaseDto implements Serializable {
-    private String name;
-
-    private ContractorType type;
-    private String phoneNumber;
-    private String physicalAddress;
-    private String websiteUrl;
-    private String email;
-    private String bankName;
-    private String bankBranch;
-    private String bankAccountNumber;
+    private String contractorName;
+    private ContractorType contractorType;
+    private String contractorPhoneNumber;
+    private String contractorPhysicalAddress;
+    private String contractorEmail;
+    private String contractorBankName;
+    private String contractorBankBranch;
+    private String contractorBankAccountNumber;
 
 
 }
