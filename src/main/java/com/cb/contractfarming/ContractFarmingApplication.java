@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ContractFarmingApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(ContractFarmingApplication.class, args);
+		System.out.println("The application is now up and running!!!");
 	}
 
 }

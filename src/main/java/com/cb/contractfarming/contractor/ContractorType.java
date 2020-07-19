@@ -9,5 +9,5 @@ import lombok.ToString;
 import javax.persistence.*;
 
 public enum  ContractorType {
-    INDV,COMPN,ASSOCIATION
+    INDIVIDUAL,COMPANY,ASSOCIATION
 }
