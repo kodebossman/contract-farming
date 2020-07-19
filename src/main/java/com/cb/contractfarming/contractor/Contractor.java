@@ -10,7 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "contractor", indexes = {@Index(name = "index_id", columnList = "id", unique = true)})
+@Table(name = "contractor", indexes = {@Index(name = "indx_contractor", columnList = "contractorPhoneNumber", unique = true)})
 @Getter
 @Setter
 @ToString
@@ -24,7 +24,7 @@ public class Contractor extends BaseEntity {
     @Column(name = "contractorType", nullable = false, length = 20)
     private ContractorType type;
 
-    @Column(name = "contractorPhoneNumber", nullable = false, length = 15)
+    @Column(name = "contractorPhoneNumber", nullable = false, length = 15, unique = true)
     private String phoneNumber;
 
     @Column(name = "contractorPhysicalAddress", nullable = false, length = 150)

@@ -13,12 +13,12 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j//Logging
 @Transactional(propagation = Propagation.REQUIRED)
 
-public class MerchantServiceImpl implements MerchantService {
-
+public class MerchantImpl implements MerchantService {
     private MerchantRepository merchantRepository;
+
     @Override
     public Merchant register(Merchant merchant) {
         log.info("Registering new merchant"+ merchant);
@@ -66,6 +66,6 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public List<Merchant> findAll(Pageable pageable) {
-        return merchantRepository.findAll(pageable).getContent();
+        return null;
     }
 }
