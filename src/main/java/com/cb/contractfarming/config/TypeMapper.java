@@ -1,9 +1,12 @@
 package com.cb.contractfarming.config;
 
 
+import com.cb.contractfarming.contract.Contract;
+import com.cb.contractfarming.contract.ContractDto;
 import com.cb.contractfarming.contractcost.model.ContractualCost;
-import com.cb.contractfarming.contractcost.model.CostDto;
+import com.cb.contractfarming.contractcost.model.ContractualCostDto;
 import com.cb.contractfarming.contractor.Contractor;
+import com.cb.contractfarming.contractor.ContractorDto;
 import com.cb.contractfarming.farmer.model.Farmer;
 import com.cb.contractfarming.farmer.model.FarmerDto;
 import com.cb.contractfarming.items.Item;
@@ -20,10 +23,19 @@ public interface  TypeMapper {
     Farmer map(FarmerDto farmerDto);
     FarmerDto map(Farmer farmer);
     Item map(ItemsDTO itemsDTO);
-    ItemsDTO map(Item it
-    Contractor map(ContractualCost contractorDto);
-     ContractualCost map(@Valid CostDto contractor);
+    ItemsDTO map(Item item);
+
+  ContractualCost map(ContractualCostDto contractualCostDto);
+  ContractualCostDto map(ContractualCost contractualCost);
+
   Project map(ProjectDto projectDto);
   ProjectDto map(Project project);
+
+  Contractor map(ContractorDto contractorDto);
+  ContractorDto map( Contractor contractor);
+
+
+  Contract map(ContractDto contractDto);
+  ContractDto map(Contract contract);
 }
 

@@ -7,7 +7,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 @Data
-public class CostDto extends BaseDto implements Serializable {
+public class ContractualCostDto extends BaseDto implements Serializable {
 
   private String name;
   private CostType costType;

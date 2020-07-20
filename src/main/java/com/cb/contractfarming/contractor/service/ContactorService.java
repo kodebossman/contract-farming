@@ -9,7 +9,7 @@ import java.util.List;
 public interface ContactorService {
 
 
-    List<Contractor> findBycontractorName(String name);
+  public List<Contractor> findByName(String name);
 
     List<Contractor> findById(int id);
 
@@ -20,4 +20,6 @@ public interface ContactorService {
     List<Contractor> findByPhoneNumber(String bankAccountNumber);
 
     List<Contractor> findAll(Pageable pageable);
+
+   Contractor register(Contractor map);
 }
