@@ -20,7 +20,7 @@ import javax.validation.Valid;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/contract")
+@RequestMapping("/contractor")
 public class ContractorApi implements CrudApi<ContractorDto> {
 
     private final ContactorService contactorService;

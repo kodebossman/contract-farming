@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ContractCostService {
-  static ContractualCost register(ContractualCost contractualCost);
+
+  ContractualCost register(ContractualCost contractualCost);
+
   Optional<ContractualCost> findById(Long id);
   List<ContractualCost> findByChargeDate(LocalDateTime chargeDate);
   Long total();

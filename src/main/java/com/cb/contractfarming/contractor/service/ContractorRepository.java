@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface ContractorReposiroty extends JpaRepository<Contractor,Long> {
+public interface ContractorRepository extends JpaRepository<Contractor,Long> {
 
-    List<Contractor> findBycontractorName(String name);
+    List<Contractor> findByName(String name);
 
     List<Contractor> findById(int id);
 
