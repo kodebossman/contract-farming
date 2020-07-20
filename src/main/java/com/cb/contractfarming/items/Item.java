@@ -24,18 +24,24 @@ public class Item extends BaseEntity {
 
   @Column(name = "name", nullable = false, length = 50)
   private String name;
+
   @Column(name = "serial_no", unique = true, nullable = false, length = 45)
   private String serialNo;
+
   @Column(name = "price", nullable = false, length = 5)
   private Double price;
+
   @Column(name = "quantity", length = 5)
   private Integer quantity;
+
   @Column(name = "description", nullable = false, length = 100)
   private String desc;
+
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "mechant_id", nullable = true)
+  @JoinColumn(name = "mechant_id", nullable = false)
   @JsonIgnore
   private Merchant merchant;
+
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @JoinColumn(name = "project_id", nullable = false)
   @JsonIgnore

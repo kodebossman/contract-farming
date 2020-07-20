@@ -12,6 +12,8 @@ import com.cb.contractfarming.items.Item;
 import com.cb.contractfarming.items.ItemsDTO;
 import com.cb.contractfarming.project.Project;
 import com.cb.contractfarming.project.ProjectDto;
+import com.cb.contractfarming.agromerchants.Merchant;
+import com.cb.contractfarming.agromerchants.MerchantDto;
 import org.mapstruct.Mapper;
 
 
@@ -29,5 +31,7 @@ public interface  TypeMapper {
   ProjectDto map(Project project);
     Suppliers map(SuppliersDto suppliersDto);
   SuppliersDto map(Suppliers suppliers);
+   Merchant map (MerchantDto merchantDto);
+  MerchantDto map(Merchant merchant);
 }
 

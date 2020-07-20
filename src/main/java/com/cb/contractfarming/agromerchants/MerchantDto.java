@@ -10,5 +10,6 @@ public class MerchantDto extends BaseDto implements Serializable {
     private String description;
     private String location;
     private String type;
+    private String msisdn;
 
 }
