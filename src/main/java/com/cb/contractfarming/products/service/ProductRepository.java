@@ -14,8 +14,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByProductDesc(String productDesc);
     List<Product> findByProductPrice(Double productPrice);
     List<Product> findByProductType(String ProductType);
-    List<Product> findByProductNameAndProductType(String productNname ,String productType);
-    List<Product> findByProductNameAndProductDesc(String productNname, String productDesc);
+    List<Product> findByProductNameAndProductType(String productName ,String productType);
+    List<Product> findByProductNameAndProductDesc(String productName, String productDesc);
 }
 
 
