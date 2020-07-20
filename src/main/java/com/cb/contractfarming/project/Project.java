@@ -32,7 +32,7 @@ public class Project extends BaseEntity {
   private Farmer farmer;
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "sponsor_id", nullable = false)
+  @JoinColumn(name = "contract_id", nullable = false)
   @JsonIgnore
   private Contractor contractor;
 

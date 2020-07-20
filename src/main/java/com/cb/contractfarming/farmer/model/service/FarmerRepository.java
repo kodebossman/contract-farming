@@ -10,7 +10,7 @@ public interface FarmerRepository extends JpaRepository<Farmer,Long> {
 
   Optional<Farmer> findById(String id);
 
-  Optional<Farmer> findByMsisdn(String lastName);
+  Optional<Farmer> findByMsisdn(String msisdn);
 
   List<Farmer> findByLastName(String lastName);
 
