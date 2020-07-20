@@ -13,11 +13,12 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j//Logging
 @Transactional(propagation = Propagation.REQUIRED)
 
 public class MerchantServiceImpl implements MerchantService {
-    @Autowired
+     
+     @Autowired
     private MerchantRepository merchantRepository;
 
     @Override
@@ -67,6 +68,6 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public List<Merchant> findAll(Pageable pageable) {
-        return merchantRepository.findAll(pageable).getContent();
+        return null;
     }
 }

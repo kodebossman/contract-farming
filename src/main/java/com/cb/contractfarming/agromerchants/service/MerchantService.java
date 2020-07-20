@@ -1,7 +1,6 @@
 package com.cb.contractfarming.agromerchants.service;
 
 import com.cb.contractfarming.agromerchants.Merchant;
-import com.cb.contractfarming.farmer.model.Farmer;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
