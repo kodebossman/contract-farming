@@ -9,8 +9,8 @@ import com.cb.contractfarming.contractor.Contractor;
 import com.cb.contractfarming.contractor.ContractorDto;
 import com.cb.contractfarming.farmer.model.Farmer;
 import com.cb.contractfarming.farmer.model.FarmerDto;
-import com.cb.contractfarming.items.Item;
-import com.cb.contractfarming.items.ItemsDTO;
+import com.cb.contractfarming.items.model.Item;
+import com.cb.contractfarming.items.model.ItemDTO;
 import com.cb.contractfarming.project.Project;
 import com.cb.contractfarming.project.ProjectDto;
 
@@ -23,8 +23,8 @@ import org.mapstruct.Mapper;
 public interface  TypeMapper {
     Farmer map(FarmerDto farmerDto);
     FarmerDto map(Farmer farmer);
-    Item map(ItemsDTO itemsDTO);
-    ItemsDTO map(Item item);
+    Item map(ItemDTO itemDTO);
+    ItemDTO map(Item item);
     ContractualCost map(ContractualCostDto contractualCostDto);
     ContractualCostDto map(ContractualCost contractualCost);
     Project map(ProjectDto projectDto);
