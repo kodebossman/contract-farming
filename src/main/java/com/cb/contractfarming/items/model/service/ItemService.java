@@ -1,6 +1,6 @@
-package com.cb.contractfarming.items.service;
+package com.cb.contractfarming.items.model.service;
 
-import com.cb.contractfarming.items.Item;
+import com.cb.contractfarming.items.model.Item;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
