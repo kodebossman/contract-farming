@@ -1,6 +1,8 @@
 package com.cb.contractfarming.config;
 
 
+import com.cb.contractfarming.agromerchants.Merchant;
+import com.cb.contractfarming.agromerchants.MerchantDto;
 import com.cb.contractfarming.contract.Contract;
 import com.cb.contractfarming.contract.ContractDto;
 import com.cb.contractfarming.contractcost.model.ContractualCost;
@@ -13,12 +15,16 @@ import com.cb.contractfarming.items.Item;
 import com.cb.contractfarming.items.ItemsDTO;
 import com.cb.contractfarming.project.Project;
 import com.cb.contractfarming.project.ProjectDto;
-
 import com.cb.contractfarming.suppliers.Suppliers;
 import com.cb.contractfarming.suppliers.SuppliersDto;
 import org.mapstruct.Mapper;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 
+@Service
 @Mapper(componentModel = "spring")
 public interface  TypeMapper {
     Farmer map(FarmerDto farmerDto);
@@ -35,6 +41,8 @@ public interface  TypeMapper {
     ContractDto map(Contract contract);
     Suppliers map(SuppliersDto suppliersDto);
     SuppliersDto map(Suppliers suppliers);
+    Merchant map(MerchantDto merchantDto);
+    MerchantDto map(Merchant merchant);
 
 }
 

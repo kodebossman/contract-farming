@@ -7,17 +7,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 @Transactional(propagation = Propagation.REQUIRED)
 
-public class ContractorServiceImpl implements ContactorService {
+public class ContractorServiceImpl implements ContractorService {
 
   private final ContractorRepository contractorRepository;
 
@@ -25,14 +24,29 @@ public class ContractorServiceImpl implements ContactorService {
   public Contractor register(Contractor contractor) {
     return contractorRepository.save(contractor);
   }
+
+  @Override
+  public long total() {
+    return contractorRepository.count();
+  }
+
+  @Override
+  public Optional<Contractor> findByContractorId(String contractorId) {
+    return contractorRepository.findByContractorId(contractorId);
+  }
+
   @Override
   public List<Contractor> findByName(String name) {
     return contractorRepository.findByName(name);
   }
 
   @Override
-  public List<Contractor> findById(int id) {
+  public Optional<Contractor> findById(Long id) {
     return contractorRepository.findById(id);
+  }
+
+  public void  deleteContractor(Long contractorId){
+    contractorRepository.deleteById(contractorId);
   }
 
   @Override

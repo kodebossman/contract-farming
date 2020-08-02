@@ -17,5 +17,7 @@ public interface ContractorRepository extends JpaRepository<Contractor,Long> {
 
     List<Contractor> findByBankAccountNumber(String bankAccountNumber);
 
+    Optional<Contractor> findByContractorId(String findByContractorId);
+
     List<Contractor> findByPhoneNumber(String bankAccountNumber);
 }

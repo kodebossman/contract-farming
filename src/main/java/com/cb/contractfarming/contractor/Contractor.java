@@ -18,6 +18,9 @@ import javax.persistence.*;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Contractor extends BaseEntity {
 
+    @Column(name = "contractorId", nullable = false, length = 20)
+    private String contractorId;
+
     @Column(name = "contractorName", nullable = false, length = 100)
     private String name;
 
